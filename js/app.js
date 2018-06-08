@@ -1,21 +1,56 @@
-// Formula Cifrado César (x - 65  + n ) % 26 +65
-// Código ASKII
+// Formula Cifrado César (x - 65  + n ) % 26 +651
+let lugares = document.getElementById("desplazamiento");
+let caracteres = document.getElementById("texto");
+let fraseCifrada = [];
+let ubicacion = lugares.value;
+let mensaje = caracteres.value;
+let nuevaFrase = [];
+const cifrar = () => {
+let mensaje = caracteres.value;
+let ubicacion = lugares.value;
+  console.log(mensaje);
 
-function cifrar (elemento) {
- let frase = document.getElementsByTagName("input")[0].value;
- let caracteres = frase.charCodeAt(0);
- let fraseCifrada = [(caracteres - 65  + 7 ) % 26 + 65];
- let caracteresT = String.fromCharCode(fraseCifrada);
- document.getElementById("resultado").innerHTML = caracteresT;
+for (let i = 0; i < mensaje.length; i++) {
+  //console.log(mensaje[i]);
+  fraseCifrada [i]= ((mensaje.charCodeAt(i)) - 65  + ubicacion ) % 26 + 65;
+  nuevaFrase [i] = String.fromCharCode(fraseCifrada [i]);
+  resultado.innerHTML += nuevaFrase [i];
+}
+console.log(fraseCifrada);
+console.log(nuevaFrase);
 }
 
-function descifrar (elemento) {
+//const descifrar = () => {
+
+
+
+
+}
+
+
+
+
+
+
+  /*fraseCifrada= (mensaje - 65  + ubicacion ) % 26 + 65;
+  console.log(fraseCifrada);
+  let caracteresT = String.fromCharCode(fraseCifrada);
+*/
+
+
+
+
+ /*let caracteresT = String.fromCharCode(fraseCifrada);
+ document.getElementById("resultado").innerHTML = caracteresT;
+
+
+const descifrar (elemento) {
   let fraseR = document.getElementsByTagName("input")[0].value;
   let caracteresR = fraseR.charCodeAt(0);
   let fraseDesifrada = [(caracteresR - 65  - 7 ) % 26 + 65];
   let caracteresL = String.fromCharCode(fraseDesifrada);
   document.getElementById("resultado").innerHTML = caracteresL;
-}
+}*/
 
 
 // Codigo ASCII
@@ -42,4 +77,3 @@ function descifrar (elemento) {
 //"126": "~",    "127": ""
 //}
 
-window
